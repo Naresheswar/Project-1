@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSK Jersey Tooltip Z-Index</title>
+    <style>
+        body {
+            background: lightblue;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            position: relative;
+            width: 650px;
+        }
+
+        .card {
+            position: relative;
+            width: 220px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            z-index: 10;
+            display: inline-block;
+            margin-right: -90px;
+        }
+
+        .card:nth-child(2) {
+            top: 20px;
+        }
+
+        .card:nth-child(3) {
+            top: 40px;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: 110%;
+            left: 0;
+            background: #222;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 13px;
+            display: none;
+            z-index: 20;
+            width: 190px;
+        }
+
+        h3 {
+            margin: 10px 0 5px;
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/I/71zqNioF33L._AC_UY1100_.jpg" alt="CSK Jersey">
+            <h3>CSK Jersey 2025</h3>
+            <div class="tooltip">
+                Price: ₹1,499<br>
+                Official Match Edition<br>
+                Premium Breathable Fabric
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.shopify.com/s/files/1/0664/0526/9761/products/2052CSK_P_-_With_Name_b0aa12ac-d534-419b-9363-f39c8f9757f6.jpg?v=1679986256" alt="CSK Jersey">
+            <h3>CSK Fan Edition</h3>
+            <div class="tooltip">
+                Price: ₹999<br>
+                Lightweight Material<br>
+                Perfect for Match Days
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdbyD2xJPheKczAPlvTAVaDA174tvarkX9kw&s" alt="CSK Jersey">
+            <h3>CSK Retro Jersey</h3>
+            <div class="tooltip">
+                Price: ₹1,299<br>
+                Classic Design<br>
+                Limited Edition
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll(".card");
+
+        cards.forEach(card => {
+            const tooltip = card.querySelector(".tooltip");
+
+            card.addEventListener("mouseenter", function () {
+                tooltip.style.display = "block";
+                tooltip.style.zIndex = "999";
+            });
+
+            card.addEventListener("mouseleave", function () {
+                tooltip.style.display = "none";
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="18" fill="#fff5f5"/>
+  <ellipse cx="60" cy="62" rx="34" ry="20" fill="#742a2a"/>
+  <ellipse cx="60" cy="58" rx="31" ry="17" fill="#dd6b20"/>
+  <rect x="44" y="47" width="10" height="10" rx="2" fill="#f6e05e"/>
+  <rect x="58" y="56" width="10" height="10" rx="2" fill="#faf089"/>
+  <rect x="69" y="46" width="10" height="10" rx="2" fill="#f6e05e"/>
+  <circle cx="52" cy="67" r="3" fill="#48bb78"/>
+  <circle cx="74" cy="64" r="3" fill="#48bb78"/>
+  <text x="60" y="104" font-size="9" text-anchor="middle" font-family="Arial" fill="#9b2c2c">Paneer Butter Masala</text>
+</svg>

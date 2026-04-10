@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VTOP Login</title>
+    <script src="script3.js" defer></script>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightskyblue;
+        }
+        form {
+            width: 350px;
+            margin: 80px auto;
+            padding: 20px;
+            background: white;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 8px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<form id="loginForm">
+    <h2 align="center">VTOP Login</h2>
+
+    <input type="text" id="username" placeholder="Username">
+    <div id="usernameError" class="error"></div>
+
+    <input type="password" id="password" placeholder="Password">
+    <div id="passwordError" class="error"></div>
+
+    <select id="usertype">
+        <option value="">Select User Type</option>
+        <option value="student">Student</option>
+        <option value="faculty">Faculty</option>
+        <option value="admin">Admin</option>
+    </select>
+    <div id="usertypeError" class="error"></div>
+
+    <button type="submit">Login</button>
+</form>
+
+</body>
+</html>

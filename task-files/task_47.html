@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple jQuery Gallery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #mainImage {
+            width: 400px;
+            height: 250px;
+            margin-bottom: 15px;
+            border: 3px solid black;
+        }
+
+        .thumbnails img {
+            width: 120px;
+            height: 80px;
+            margin: 5px;
+            cursor: pointer;
+            border: 2px solid gray;
+        }
+
+        .thumbnails img:hover {
+            border: 2px solid black;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+
+            $(".thumb").click(function(){
+
+                var newImage = $(this).attr("src");
+
+                $("#mainImage").fadeOut(300, function(){
+                    $(this).attr("src", newImage);
+                    $(this).fadeIn(300);
+                });
+
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <h2>Simple Image Gallery</h2>
+
+    <img id="mainImage" 
+         src="https://img.etimg.com/thumb/width-1200,height-1200,imgsize-18700,resizemode-75,msid-114814009/news/sports/ms-dhoni-to-return-to-chennai-super-kings-as-uncapped-player.jpg">
+
+    <div class="thumbnails">
+        <img class="thumb" src="https://img.etimg.com/thumb/width-1200,height-1200,imgsize-18700,resizemode-75,msid-114814009/news/sports/ms-dhoni-to-return-to-chennai-super-kings-as-uncapped-player.jpg">
+        <img class="thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR8qB0gxGTv876-onDgwJFnAAUy3bv7YYQCA&s">
+        <img class="thumb" src="https://static.toiimg.com/thumb/msid-123071815,width-400,resizemode-4/123071815.jpg">
+    </div>
+
+</body>
+</html>

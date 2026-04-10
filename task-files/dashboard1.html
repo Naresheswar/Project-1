@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VTOP Dashboard</title>
+    <script>
+        window.onload = function() {
+            let user = localStorage.getItem("loggedUser");
+            if (user) {
+                document.getElementById("welcome").textContent = "Welcome " + user;
+            } else {
+                window.location.href = "login.html";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2 id="welcome"></h2>
+</body>
+</html>

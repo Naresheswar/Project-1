@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <style>
+        body{background-color:thistle;}
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        input { padding: 8px; width: 250px;border-radius: 4px; }
+        button { padding: 10px 20px; cursor: pointer; background: lightcyan; color: black;}
+    </style>
+</head>
+<body>
+    <h2>Register</h2>
+    <form id="registrationForm">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+        </div>
+        <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+    <script>
+        function validateForm() {
+            const username = document.getElementById('username');
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+
+            if (username.value.trim() === "") {
+                username.focus();
+            }
+            else if (email.value.trim() === "") {
+                email.focus();
+            }
+            else if (password.value.trim() === "") {
+                password.focus();
+            }
+            else {
+                alert("Success!");
+            }
+        }
+    </script>
+</body>
+</html>

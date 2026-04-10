@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout Form</title>
+    <script src="script2.js" defer></script>
+    <style>
+        form {
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<h2 align="center">Online Checkout</h2>
+
+<form id="checkoutForm">
+    <input type="text" id="fullname" placeholder="Full Name">
+    <input type="text" id="phone" placeholder="Phone Number">
+    <input type="text" id="address" placeholder="Delivery Address">
+    <input type="text" id="zip" placeholder="ZIP / Postal Code">
+    
+    <select id="payment">
+        <option value="">Select Payment Option</option>
+        <option value="card">Credit/Debit Card</option>
+        <option value="upi">UPI</option>
+        <option value="cod">Cash on Delivery</option>
+    </select>
+
+    <button type="submit">Place Order</button>
+    <p id="errorMsg" class="error"></p>
+</form>
+
+</body>
+</html>

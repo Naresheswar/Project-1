@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Z-Index Test Page</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            z-index: 10;
+        }
+
+        .box1, .box2, .box3 {
+            height: 300px;
+            color: white;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box1 {
+            background: lightpink;
+            position: relative;
+            z-index: 1;
+            color:black;
+        }
+
+        .box2 {
+            background: lightblue;
+            position: relative;
+            z-index: 2;
+            color:black;
+        }
+
+        .box3 {
+            background: lightgreen;
+            position: relative;
+            z-index: 3;
+            color:black;
+        }
+
+        .test-box {
+            background: pink;
+            height: 300px;
+            position: relative;
+            z-index: 50;
+            color: white;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color:black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        Fixed Header
+    </div>
+
+    <div class="content">
+        <div class="box1">Box-1</div>
+        <div class="box2">Box-2</div>
+        <div class="box3">Box-3</div>
+        <div class="test-box">Text-BOx</div>
+    </div>
+
+</body>
+</html>

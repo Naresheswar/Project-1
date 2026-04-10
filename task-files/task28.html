@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript innerHTML Example</title>
+</head>
+<body>
+
+  <p id="myPara">Welcome!! <br> Click the button to change this text.</p>
+
+  <button onclick="changeText()">Click Me</button>
+
+  <script>
+    function changeText() {
+      document.getElementById("myPara").innerHTML = "Welcome to JavaScript!";
+    }
+  </script>
+
+</body>
+</html>

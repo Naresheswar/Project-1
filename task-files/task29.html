@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome Message</title>
+</head>
+<body>
+
+  <input type="text" id="nameInput" placeholder="Enter your name">
+  <br><br>
+
+  <button onclick="showMessage()">Submit</button>
+  <br><br>
+
+  <div id="result"></div>
+
+  <script>
+    function showMessage() {
+      var name = document.getElementById("nameInput").value;
+      document.getElementById("result").innerHTML =
+        "Hello " + name + ", Welcome!";
+    }
+  </script>
+
+</body>
+</html>

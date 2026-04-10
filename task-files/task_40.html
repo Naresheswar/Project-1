@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSK Jersey</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: lightgoldenrodyellow;
+        }
+
+        .product-container {
+            position: relative;
+        }
+
+        img {
+            width: 300px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #tooltip {
+            position: fixed;
+            background:red;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            pointer-events: none;
+            display: none;
+            max-width: 220px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="product-container">
+        <img id="productImage" src="https://m.media-amazon.com/images/I/61tF39EhgfL._AC_UY1100_.jpg" alt="CSK Jersey">
+    </div>
+
+    <div id="tooltip">
+        <strong>CSK Official Jersey 2026</strong><br>
+        Price: ₹1,499<br>
+        Breathable fabric with official team logo.  
+        Perfect for match days!
+    </div>
+
+    <script>
+        const image = document.getElementById("productImage");
+        const tooltip = document.getElementById("tooltip");
+
+        image.addEventListener("mouseover", function () {
+            tooltip.style.display = "block";
+        });
+
+        image.addEventListener("mouseout", function () {
+            tooltip.style.display = "none";
+        });
+
+        image.addEventListener("mousemove", function (event) {
+            tooltip.style.left = event.clientX + 15 + "px";
+            tooltip.style.top = event.clientY + 15 + "px";
+        });
+    </script>
+
+</body>
+</html>

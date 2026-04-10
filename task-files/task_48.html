@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Highlight Paragraphs</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        .highlight {
+            background: lightblue;
+            padding: 10px;
+        }
+
+        p {
+            cursor: pointer;
+            margin: 10px 0;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $("p").addClass("highlight");
+
+            $("p").click(function(){
+                $(this).toggleClass("highlight");
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <h2>Click Paragraph to Toggle Highlight</h2>
+
+    <p>Hi!! Myself Naresh.</p>
+    <p>Welcome to Web Programming.</p>
+
+</body>
+</html>

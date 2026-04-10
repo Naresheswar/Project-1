@@ -1,0 +1,46 @@
+body{
+    background-color:lightgrey;
+    font-family:Arial;
+}
+
+.product-card{
+    background-color:white;
+    width:300px;
+    margin:50px auto;
+    padding:20px;
+    text-align:center;
+    border-radius:10px;
+}
+
+.product-image{
+    height:auto;
+    width:100%;
+}
+
+.product-name{
+    color:black;
+}
+
+.price{
+    color:green;
+}
+
+.rating{
+    color:orange;
+}
+
+.description{
+    color:gray;
+}
+
+.cart-btn{
+    background-color:white;
+    color:black;
+    cursor:pointer;
+    border:1px solid black;
+}
+
+.cart-btn:hover{
+    background-color:lightgray;
+}
+

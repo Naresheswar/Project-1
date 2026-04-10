@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Live Form Validation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: lightblue;
+        }
+
+        form {
+            background: white;
+            padding: 30px;
+            width: 320px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input.valid {
+            border-color: green;
+        }
+
+        input.invalid {
+            border-color: red;
+        }
+
+        .icon {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 18px;
+        }
+
+        .error-text {
+            font-size: 13px;
+            color: red;
+            min-height: 18px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: darkblue;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #2e59d9;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="registerForm">
+        <h2>Register</h2>
+
+        <div class="input-group">
+            <input type="text" id="email" placeholder="Email">
+            <span class="icon" id="emailIcon"></span>
+        </div>
+
+        <div class="input-group">
+            <input type="password" id="password" placeholder="Password">
+        </div>
+
+        <div class="error-text" id="passwordError"></div>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+        const emailIcon = document.getElementById("emailIcon");
+        const passwordError = document.getElementById("passwordError");
+        const form = document.getElementById("registerForm");
+
+        email.addEventListener("input", function () {
+            const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (pattern.test(email.value)) {
+                email.classList.remove("invalid");
+                email.classList.add("valid");
+                emailIcon.textContent = "✔";
+                emailIcon.style.color = "green";
+            } else {
+                email.classList.remove("valid");
+                email.classList.add("invalid");
+                emailIcon.textContent = "✖";
+                emailIcon.style.color = "red";
+            }
+        });
+
+        password.addEventListener("input", function () {
+            const value = password.value;
+            const strongPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+
+            if (strongPattern.test(value)) {
+                password.classList.remove("invalid");
+                password.classList.add("valid");
+                passwordError.textContent = "";
+            } else {
+                password.classList.remove("valid");
+                password.classList.add("invalid");
+                passwordError.textContent = "Password must be 8+ chars, include uppercase, lowercase and number";
+            }
+        });
+
+        form.addEventListener("submit", function (e) {
+            const emailValid = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(email.value);
+            const passwordValid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(password.value);
+
+            if (!emailValid || !passwordValid) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+</body>
+</html>

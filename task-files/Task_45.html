@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Overlapping Image Gallery</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .gallery {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            margin: 50px;
+        }
+
+        .gallery img {
+            position: absolute;
+            width: 300px;
+            height: 200px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .img1 {
+            top: 20px;
+            left: 50px;
+            z-index: 1;
+        }
+
+        .img2 {
+            top: 80px;
+            left: 150px;
+            z-index: 2;
+        }
+
+        .img3 {
+            top: 140px;
+            left: 250px;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gallery">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCOzqK98GFG6a0prHaJ9D1jf6WJaSUEf-8iQ&s" class="img1">
+        <img src="https://documents.iplt20.com/ipl/IPLHeadshot2025/797.png" class="img2">
+        <img src="https://documents.iplt20.com/ipl/IPLHeadshot2025/102.png" class="img3">
+    </div>
+
+    <script>
+        const images = document.querySelectorAll("img");
+        const originalZ = [1, 2, 3];
+
+        images.forEach((img, index) => {
+            img.addEventListener("click", () => {
+                images.forEach((image, i) => {
+                    image.style.zIndex = originalZ[i];
+                });
+                img.style.zIndex = 10;
+            });
+        });
+    </script>
+
+</body>
+</html>

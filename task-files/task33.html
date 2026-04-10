@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>University Registration</title>
+    <script src="script1.js" defer></script>
+    <style>
+    	form {
+            width: 400px;
+            margin: auto;
+        }
+        input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<h2 align="center">University Registration</h2>
+
+<form id="regForm">
+    <input type="text" id="name" placeholder="Student Name">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <input type="password" id="confirmPassword" placeholder="Confirm Password">
+    <input type="number" id="age" placeholder="Age">
+    <button type="submit">Register</button>
+    <p id="errorMsg" class="error"></p>
+</form>
+
+</body>
+</html>

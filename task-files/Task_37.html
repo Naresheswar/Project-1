@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel Booking Form</title>
+    <script src="script5.js" defer></script>
+    <style>
+        form {
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<form id="hotelForm">
+    <h2 align="center">Hotel Booking</h2>
+
+    <input type="text" id="guestName" placeholder="Guest Name">
+    <div id="nameError" class="error"></div>
+
+    <input type="text" id="contactNumber" placeholder="Contact Number">
+    <div id="contactError" class="error"></div>
+
+    <p>Room Type:</p>
+    <input type="radio" name="roomType" value="Single"> Single
+    <input type="radio" name="roomType" value="Double"> Double
+    <input type="radio" name="roomType" value="Suite"> Suite
+    <div id="roomError" class="error"></div>
+
+    <p>Additional Services:</p>
+    <input type="checkbox" name="service" value="Breakfast"> Breakfast
+    <input type="checkbox" name="service" value="Airport Pickup"> Airport Pickup
+    <input type="checkbox" name="service" value="WiFi"> Wi-Fi
+    <div id="serviceError" class="error"></div>
+
+    <br>
+    <input type="checkbox" id="terms"> I agree to the Terms and Conditions
+    <div id="termsError" class="error"></div>
+
+    <br><br>
+    <button type="submit">Book Now</button>
+</form>
+
+</body>
+</html>
